@@ -6,7 +6,6 @@ on:
       - master
     paths:
       - chrnodejs/**
-
 jobs:
   push:
     name: "esdock:chrnodejs_${{ matrix.tag }}"
