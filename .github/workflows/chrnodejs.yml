@@ -8,7 +8,7 @@ on:
       - chrnodejs/**
 jobs:
   push:
-    name: "esdock:chrnodejs_${{ matrix.tag }}"
+    name: "test:chrnodejs_${{ matrix.tag }}"
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -37,4 +37,4 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: |
-            ghcr.io/fishyspop/esdock:chrnodejs_${{ matrix.tag }}
+            ghcr.io/fishyspop/test:chrnodejs_${{ matrix.tag }}
