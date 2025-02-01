@@ -10,6 +10,9 @@ jobs:
   push:
     name: "esdock:chrnodejs_${{ matrix.tag }}"
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read 
     strategy:
       fail-fast: false
       matrix:
