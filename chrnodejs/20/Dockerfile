@@ -13,6 +13,13 @@ RUN apt-get update \
 RUN apt update
 RUN apt install -y wget net-tools iproute2 gnupg2 xvfb pulseaudio apt-transport-https
 
+RUN         npm install npm@latest typescript ts-node @types/node --location=global
+
+# install pnpm
+RUN         npm install -g corepack
+RUN         corepack enable
+RUN         corepack prepare pnpm@latest --activate
+
 RUN         apt-get update \
             && apt-get install -y wget gnupg libxss1 \
             && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
