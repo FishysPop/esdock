@@ -21,6 +21,8 @@ RUN         corepack enable
 RUN         corepack prepare pnpm@latest --activate
 RUN npm install puppeteer --location=global \
     && npx puppeteer browsers install chrome --install-deps
+RUN PUPPETEER_CACHE_DIR=/home/container/.cache/puppeteer \
+  npx puppeteer browsers install chrome --install-deps
 
 RUN         apt-get update \
             && apt-get install -y wget gnupg libxss1 \
