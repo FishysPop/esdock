@@ -19,7 +19,8 @@ RUN         npm install npm@latest typescript ts-node @types/node --location=glo
 RUN         npm install -g corepack
 RUN         corepack enable
 RUN         corepack prepare pnpm@latest --activate
-RUN         npx puppeteer browsers install chrome --install-deps
+RUN npm install puppeteer --location=global \
+    && npx puppeteer browsers install chrome --install-deps
 
 RUN         apt-get update \
             && apt-get install -y wget gnupg libxss1 \
