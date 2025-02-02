@@ -13,7 +13,7 @@ RUN apt-get update \
 RUN apt update
 RUN apt install -y wget net-tools iproute2 gnupg2 xvfb pulseaudio apt-transport-https
 
-RUN         npm install npm@latest typescript ts-node @types/node --location=global
+RUN npm install npm@latest typescript ts-node @types/node --location=global
 
 USER container
 ENV USER=container HOME=/home/container
